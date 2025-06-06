@@ -1,6 +1,441 @@
+html,
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f8f8f8;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.playlist-container {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  flex-wrap: wrap;
+}
+
+.playlist-card:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.search-and-playlist {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  justify-self: center;
+}
+
+#search-form {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+  margin-right: auto;
+  gap: 1rem;
+}
+
+.playlist-card {
+  display: block;
+  border-radius: 10px;
+  background-color: rgb(83, 83, 65);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 300px;
+  width: 220px;
+  padding-bottom: 20px;
+  filter: drop-shadow(2px 2px 2px #000000);
+  text-overflow: ellipsis;
+}
+
+.playlist-card h4,
+.playlistcard p {
+  display: block;
+  width: calc(100% - 20px);
+  margin: 0;
+  padding-inline: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: elipses;
+  color: white;
+  font-size: 30px;
+}
+
+.likes {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-end;
+  justify-content: right;
+  padding: 0;
+  margin-top: -25px;
+  margin-right: 20px;
+}
+
+.likes p {
+  margin-right: -10px;
+  margin-top: 10px;
+  color: white;
+}
+
+.likes p:hover {
+  transform: scale(1.2);
+}
+
+.heart-image:hover {
+  transform: scale(1.1);
+}
+
+.heart-image {
+  height: 25px;
+  width: 25px;
+  align-self: flex-start;
+  padding-left: 15px;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  filter: grayscale();
+}
+#name {
+  color: #eeeeee;
+  padding: 0;
+  padding-left: 5px;
+  filter: drop-shadow(1px 1px 1px #000000);
+  font-family: Cambria;
+  margin: 0px;
+}
+
+#song-duration {
+  margin-left: auto;
+  align-self: center;
+  float: right;
+}
+
+button:hover {
+  background-color: #002ead;
+  transform: scale(1.1);
+  transition: 0.7s;
+  cursor: pointer;
+}
+
+button:focus {
+  outline-color: transparent;
+  outline-style: solid;
+  box-shadow: 0 0 0 4px #f1f3f6;
+  transition: 0.7s;
+}
+
+button {
+  background-color: #0a0a23;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  min-height: 30px;
+  min-width: 120px;
+  margin-bottom: 20px;
+  align-self: end;
+  font-weight: 1000;
+  margin-right: 100%;
+}
+
+#duration-song {
+  color: white;
+  font-size: 20px;
+}
+
+p {
+  color: gold;
+  align-self: flex-start;
+  font-weight: 1000;
+  padding-inline: 10px;
+  margin-top: 3px;
+  font-size: 17px;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Arial", sans-serif;
+  background-color: #f8f8f8;
+}
+
+header {
+  background-color: rgb(238, 238, 238);
+  display: flex;
+  border-bottom: 4px solid #ccc;
+  border-top: 4px solid #ccc;
+}
+
+header h2 {
+  color: black;
+  padding: 15px;
+  margin: 0;
+}
+
+nav {
+  margin-left: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.navigation {
+  font-size: 30px;
+  color: black;
+  align-self: center;
+  margin-left: -40px;
+}
+
+.navigation:hover {
+  color: #00ad65;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+main {
+  flex: 1;
+  display: flex; /* Add this if you want .playlist-container to fill main */
+  flex-direction: row;
+  max-width: 100%;
+  padding: 20px;
+  min-height: 0; /* Prevents flex children from overflowing */
+}
+footer {
+  background-color: rgb(238, 238, 238);
+  border-top: 4px solid #ccc;
+}
+
+h2 {
+  color: black;
+  padding: 20px;
+  margin: 0;
+}
+
+/* CSS for feature part of website*/
+
+.feature-container {
+  display: flex;
+  flex-direction: row;
+  overflow-y: auto;
+}
+
+#feature-image {
+  display: flex;
+  flex-direction: column;
+}
+
+#feature-text {
+  color: rgb(248, 235, 235);
+  align-self: center;
+  width: 100%;
+}
+
+.image-feature {
+  width: 700px;
+  height: 700px;
+  margin: 30px;
+  border: 2px solid black;
+}
+
+#feature-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-right: auto;
+  width: 70%;
+  overflow-y: auto;
+  height: 100%;
+}
+
+#main2 {
+  flex: 1;
+  display: flex; /* Add this if you want .playlist-container to fill main */
+  flex-direction: column;
+  max-width: 100%;
+  padding: 20px;
+  min-height: 0; /* Prevents flex children from overflowing */
+  background-color: #4a3c3c;
+}
+
+/* CSS for Modal */
+
+.playlist-image {
+  padding: 15px;
+  margin-left: -5px;
+  height: 200px;
+  align-self: center;
+  width: 200px;
+  max-height: 90%;
+  max-width: 95%;
+}
+
+#playlist-header {
+  display: flex;
+  flex-direction: row;
+  padding-left: 5%;
+}
+
+/* Is the body for the popup playlist*/
+#playlist-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+#popup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h3 {
+  color: white;
+  text-align: left;
+  font-size: 80px;
+  font-weight: 1000;
+  align-self: flex-start;
+  padding-inline: 40px;
+  margin: 0;
+  max-width: 50%;
+}
+
+h5 {
+  color: gold;
+  text-align: left;
+  font-size: 30px;
+  font-weight: 1000;
+  align-self: flex-start;
+  padding-inline: 40px;
+  margin: 0;
+}
+
+.song {
+  display: flex;
+  flex-direction: row;
+  margin-inline: 6%;
+  border: 2px solid rgb(240, 236, 236);
+  margin-top: 10px;
+}
+
+.song-image {
+  padding: 15px;
+  margin: 0px;
+  height: 100px;
+  width: 100px;
+  max-height: 90%;
+  max-width: 95%;
+}
+
+#song-desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+h6 {
+  color: white;
+  font-size: 25px;
+  padding: 0;
+  margin: 0;
+}
+
+h7,
+h8 {
+  color: gold;
+  font-size: 20px;
+  padding: 0;
+  margin-top: -20px;
+  margin-bottom: 30;
+}
+
+.modal-overlay {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(2, 2, 2, 0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: rgb(41, 41, 37);
+  margin: 10% auto; /* 15% from the top and centered */
+  padding: 0px;
+  border: 1px solid #888;
+  border-radius: 50px;
+  width: 60%; /* Could be more or less, depending on screen size */
+  height: 60%;
+  filter: drop-shadow(2px 2px 2px #161010);
+  overflow: auto; /* Enable scroll if needed */
+}
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+h1 {
+  font-family: Licorice, sans-serif;
+  font-size: 8em;
+}
+
+#reviews-section {
+  flex-grow: 2;
+}
+
+#review-form-section,
+#reviews-section {
+  margin-bottom: 20px;
+}
+
+#playlist-form label,
+#playlist-form input,
+#playlist-form textarea,
+#playlist-form select,
+#playlist-form button {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.playlist-form button {
+  background-color: #4e4187;
+  font-family: Rubik, sans-serif;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.playlist-form button:hover {
+  background-color: #c1bade;
+  color: black;
+}
+
+#reviews-list {
+  margin-top: 20px;
+}
+
+.review-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.review-item:hover {
+  background-color: #f9f9f9;
 }

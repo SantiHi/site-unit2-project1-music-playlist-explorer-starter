@@ -1,0 +1,241 @@
+[
+  {
+    "playlist_name": "Morning Vibes",
+    "playlist_author": "Alice Smith",
+    "playlist_art": "assets/img/playlist.png",
+    "likes": 4,
+    "heartColor": "gray",
+    "songs": [
+      {
+        "songID": "s001",
+        "title": "Sunrise Serenade",
+        "artist": "The Early Birds",
+        "album": "Morning Melodies",
+        "duration": "3:45"
+      },
+      {
+        "songID": "s002",
+        "title": "Coffee & Beats",
+        "artist": "Mood Lift",
+        "album": "Daily Grind",
+        "duration": "4:10"
+      },
+      {
+        "songID": "s003",
+        "title": "Early Light",
+        "artist": "Daybreak Duo",
+        "album": "Dawn Collection",
+        "duration": "3:20"
+      },
+      {
+        "songID": "s004",
+        "title": "Bright Start",
+        "artist": "Wake-Up Crew",
+        "album": "Wake-Up Beats",
+        "duration": "2:55"
+      },
+      {
+        "songID": "s005",
+        "title": "First Rays",
+        "artist": "Sunbeam Sounds",
+        "album": "Early Glow",
+        "duration": "3:33"
+      }
+    ]
+  },
+  {
+    "playlist_name": "Chill Out",
+    "playlist_author": "Carlos Reyes",
+    "playlist_art": "assets/img/playlist.png",
+    "likes": 7,
+    "heartColor": "gray",
+    "songs": [
+      {
+        "songID": "s101",
+        "title": "Daydream",
+        "artist": "Lo-Fi Nights",
+        "album": "Lo-Fi Dreams",
+        "duration": "2:58"
+      },
+      {
+        "songID": "s102",
+        "title": "Soft Waves",
+        "artist": "Oceanic Sounds",
+        "album": "Ocean Whispers",
+        "duration": "5:01"
+      },
+      {
+        "songID": "s103",
+        "title": "Evening Glow",
+        "artist": "Soul Calm",
+        "album": "Twilight Tunes",
+        "duration": "3:27"
+      },
+      {
+        "songID": "s104",
+        "title": "Cool Breeze",
+        "artist": "Mellow Hour",
+        "album": "Relaxed Rhythms",
+        "duration": "4:12"
+      },
+      {
+        "songID": "s105",
+        "title": "Mellow Moods",
+        "artist": "Chill Viber",
+        "album": "Chill Vibes",
+        "duration": "3:50"
+      },
+      {
+        "songID": "s106",
+        "title": "Late Night Lounge",
+        "artist": "Dreamscape",
+        "album": "Moonlit Sessions",
+        "duration": "6:05"
+      }
+    ]
+  },
+  {
+    "playlist_name": "Workout Pump",
+    "playlist_author": "Jasmine Lee",
+    "playlist_art": "assets/img/playlist.png",
+    "likes": 0,
+    "heartColor": "gray",
+    "songs": [
+      {
+        "songID": "s201",
+        "title": "Energy Rush",
+        "artist": "ElectroBeat",
+        "album": "Gym Anthems",
+        "duration": "3:30"
+      },
+      {
+        "songID": "s202",
+        "title": "Push It Harder",
+        "artist": "Fit Drops",
+        "album": "Fitness Beats",
+        "duration": "4:05"
+      },
+      {
+        "songID": "s203",
+        "title": "Last Rep",
+        "artist": "Gym Heroes",
+        "album": "Final Lift",
+        "duration": "3:50"
+      },
+      {
+        "songID": "s204",
+        "title": "Burn It Up",
+        "artist": "Adrenaline Rush",
+        "album": "High Intensity",
+        "duration": "3:42"
+      },
+      {
+        "songID": "s205",
+        "title": "Victory Lap",
+        "artist": "BangersOnly",
+        "album": "Finish Strong",
+        "duration": "4:15"
+      },
+      {
+        "songID": "s206",
+        "title": "Power Surge",
+        "artist": "Max Effort",
+        "album": "Pumped Up",
+        "duration": "3:58"
+      }
+    ]
+  },
+  {
+    "playlist_name": "Throwback Classics",
+    "playlist_author": "David Lee",
+    "playlist_art": "assets/img/playlist.png",
+    "likes": 23,
+    "heartColor": "gray",
+    "songs": [
+      {
+        "songID": "s301",
+        "title": "Electric Youth",
+        "artist": "Retro Beat",
+        "album": "80s Forever",
+        "duration": "4:05"
+      },
+      {
+        "songID": "s302",
+        "title": "Golden Memories",
+        "artist": "Timeless Tunes",
+        "album": "Nostalgia",
+        "duration": "3:50"
+      },
+      {
+        "songID": "s303",
+        "title": "Classic Rock Anthem",
+        "artist": "Vintage Vibes",
+        "album": "Rock Legends",
+        "duration": "5:20"
+      },
+      {
+        "songID": "s304",
+        "title": "Disco Fever",
+        "artist": "Nightgroove",
+        "album": "Dancefloor Hits",
+        "duration": "4:45"
+      },
+      {
+        "songID": "s305",
+        "title": "Retro Romance",
+        "artist": "Heartstrings",
+        "album": "Love in the 90s",
+        "duration": "4:00"
+      },
+      {
+        "songID": "s306",
+        "title": "Summer ’99",
+        "artist": "Sunset Memories",
+        "album": "Millennium Mix",
+        "duration": "3:35"
+      },
+      {
+        "songID": "s301",
+        "title": "Electric Youth",
+        "artist": "Retro Beat",
+        "album": "80s Forever",
+        "duration": "4:05"
+      },
+      {
+        "songID": "s302",
+        "title": "Golden Memories",
+        "artist": "Timeless Tunes",
+        "album": "Nostalgia",
+        "duration": "3:50"
+      },
+      {
+        "songID": "s303",
+        "title": "Classic Rock Anthem",
+        "artist": "Vintage Vibes",
+        "album": "Rock Legends",
+        "duration": "5:20"
+      },
+      {
+        "songID": "s304",
+        "title": "Disco Fever",
+        "artist": "Nightgroove",
+        "album": "Dancefloor Hits",
+        "duration": "4:45"
+      },
+      {
+        "songID": "s305",
+        "title": "Retro Romance",
+        "artist": "Heartstrings",
+        "album": "Love in the 90s",
+        "duration": "4:00"
+      },
+      {
+        "songID": "s306",
+        "title": "Summer ’99",
+        "artist": "Sunset Memories",
+        "album": "Millennium Mix",
+        "duration": "3:35"
+      }
+    ]
+  }
+]
