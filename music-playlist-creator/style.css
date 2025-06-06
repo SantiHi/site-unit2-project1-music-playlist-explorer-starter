@@ -426,7 +426,8 @@ h1 {
   color: white;
 }
 
-#playlist-form input {
+#playlist-form input,
+#playlist-form textarea {
   color: black;
 }
 
