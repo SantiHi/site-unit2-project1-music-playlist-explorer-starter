@@ -24,9 +24,21 @@
           <label for="new-name">Playlist Title: </label>
           <input type="text" id="new-name" name="book-title" required />
           <label for="author"> Author of Playlist: </label>
-          <input type="text" id="author" name="book-title" required />
+          <input
+            type="text"
+            id="author"
+            name="book-title"
+            value="Name"
+            required
+          />
           <label for="image"> Image URL </label>
-          <input type="text" id="image" name="url" required />
+          <input
+            type="text"
+            id="image"
+            name="url"
+            value="assets/img/playlist.png"
+            required
+          />
           <label for="new-songs"
             >Songs (form songname: artist, album, duration; song2:..)</label
           >
@@ -47,8 +59,8 @@
             <select id="sorting" name="sort">
               <option value="title">title</option>
               <option value="likes">likes</option>
+              <option value="date">date</option>
             </select>
-            <button id="sort-button">Sort</button>
           </form>
         </div>
         <div class="playlist-container"></div>
@@ -57,6 +69,15 @@
       <div id="Modal" class="modal-overlay">
         <div class="modal-content">
           <span class="close">&times;</span>
+        </div>
+      </div>
+
+      <!-- Edit Modal -->
+
+      <div id="editor" class="modal-overlay">
+        <div class="editor-content">
+          <span class="close">&times;</span>
+          <div class="edit-container"></div>
         </div>
       </div>
     </main>

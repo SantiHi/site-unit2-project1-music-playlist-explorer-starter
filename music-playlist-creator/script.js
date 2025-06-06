@@ -1,11 +1,12 @@
 // JavaScript for Opening and Closing the Modal
 const modal = document.getElementById("Modal");
+const editModal = document.getElementById("editor");
 const span = document.getElementsByClassName("close")[0];
 const allTab = document.getElementsByClassName("navigation")[0];
 const featTab = document.getElementsByClassName("navigation")[1];
 const searchButton = document.getElementById("search-button");
 const clearButton = document.getElementById("clear-button");
-const sortButton = document.getElementById("sort-button");
+const sort = document.getElementById("sorting");
 
 // Get playlists container
 const playlistList = document.querySelector(".playlist-container");
@@ -14,6 +15,14 @@ const modalContent = document.querySelector(".modal-content");
 featTab.addEventListener("click", () => {
   window.location.href = "featured.html";
 });
+
+if (sort) {
+  document.getElementById("sorting").addEventListener("change", function () {
+    const selectedValue = this.value;
+    console.log(selectedValue);
+    handleSort(selectedValue);
+  });
+}
 
 if (searchButton) {
   searchButton.addEventListener("click", (event) => {
@@ -67,12 +76,16 @@ window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
+  if (event.target == editModal) {
+    editModal.style.display = "none";
+  }
 };
 
 // still need to add picture functionality, for now just focus on title, etc
 const createPlaylistElement = (playlistObj) => {
   const playlistElement = document.createElement("section");
   playlistElement.className = "playlist-card";
+  playlistElement.id = `${playlistObj.date_added}`;
   playlistElement.innerHTML = `
         <img
             src="${playlistObj.playlist_art}" 
@@ -94,6 +107,7 @@ const createPlaylistElement = (playlistObj) => {
   const heartElement = playlistElement.querySelector(".heart-image");
   const numLikes = playlistElement.querySelector("#name");
   const deleteButton = playlistElement.querySelector("#trash");
+  const editButton = playlistElement.querySelector("#edit");
 
   heartElement.addEventListener("click", (event) => {
     event.stopPropagation();
@@ -108,6 +122,9 @@ const createPlaylistElement = (playlistObj) => {
       numLikes.innerHTML = Number(numLikes.innerHTML) - 1 + "";
       numLikes.style.color = "white";
     }
+    if (handleSort(document.getElementById("sorting").value) === "likes") {
+      handleSort("likes");
+    }
   });
 
   deleteButton.addEventListener("click", (event) => {
@@ -117,8 +134,55 @@ const createPlaylistElement = (playlistObj) => {
   playlistElement.addEventListener("click", () => {
     populateModal(playlistObj);
   });
+  editButton.addEventListener("click", (event) => {
+    event.stopPropagation();
+    document.querySelector("#editor").style.display = "block";
+    populateEdit(playlistObj);
+  });
 
   return playlistElement;
+};
+
+const populateEdit = (playlistObj) => {
+  console.log(playlistObj);
+
+  const editContainer = document.querySelector(".edit-container");
+  const editForm = document.createElement("form");
+  editForm.id = "editor-form";
+  console.log(editContainer);
+  // generate correctly formatted song string.
+  let initString = "";
+
+  playlistObj.songs.forEach((song, index) => {
+    const string =
+      song.title +
+      ":" +
+      song.artist +
+      "," +
+      song.album +
+      "," +
+      song.duration +
+      ";";
+    initString = initString + string;
+  });
+  console.log(initString);
+  editForm.innerHTML = `
+    <h2>Edit Current Playlist:</h2>
+              <label for="new-name">Playlist Title: </label>
+              <input type="text" id="new-name" name="book-title" value = ${playlistObj.playlist_name} required />
+              <label for="author"> Author of Playlist: </label>
+              <input type="text" id="author" name="book-title" value = ${playlistObj.playlist_author}required />
+              <label for="image"> Image URL </label>
+              <input type="text" id="image" name="url" value = ${playlistObj.playlist_art} required />
+              <label for="new-songs" id = "songlist" 
+                >Songs (form songname: artist, album, duration; song2:..)</label
+              >
+              <textarea id="new-songs" name="review-text" required> ${initString}</textarea>
+              <button type="submit">Save Changes</button>
+  `;
+  console.log(editForm);
+  editContainer.appendChild(editForm);
+  console.log(editContainer);
 };
 
 const populateModal = (playlistObj) => {
@@ -232,33 +296,64 @@ const featuredPlaylistTab = (feature) => {
   container.append(sect);
 };
 
-const Sortbyfunct = (sortingFunc) => {
+const handleSort = (sortingFunc) => {
   const B = document.querySelectorAll(".playlist-card");
   array = Array.from(B);
   console.log(array);
-  if (sortingFunc === "name") {
+
+  console.log(compareName(array[0], array[1]));
+
+  if (sortingFunc === "title") {
+    // lexographically by name of playlist
+    array.sort((a, b) => compareName(a, b));
+    console.log(array);
+  } else if (sortingFunc === "likes") {
+    // by number of likes (descending)
+    array.sort((a, b) => compareLikes(a, b));
   } else {
-    //sort by number of likes
+    // sort by date
+    array.sort((a, b) => compareDate(a, b));
   }
+  Array.from(B).forEach((playlist) => {
+    playlist.parentNode.removeChild(playlist);
+  });
+  array.forEach((playlist) => {
+    playlistList.appendChild(playlist);
+  });
 };
 
 const compareName = (playlist1, playlist2) => {
   // names lexographically
-  const likes1 = playlist1.likes;
-  const likes2 = playlist2.likes;
-  const play1 = playlist1.toLowerCase();
-  const play2 = playlist2.toLowerCase();
+  const title1 = playlist1.querySelector("h4").innerText;
+  const title2 = playlist2.querySelector("h4").innerText;
+  const play1 = title1.toLowerCase();
+  const play2 = title2.toLowerCase();
+
+  console.log(play1);
+  console.log(play2);
   if (play2 > play1) {
     return -1;
   } else if (play2 < play1) {
     return 1;
   } else {
-    if (likes1 >= likes2) return -1;
-    return 1;
+    return compareLikes(playlist1, playlist2);
   }
 };
 
-const compareLikes = (playlist1, playlist2) => {};
+const compareLikes = (playlist1, playlist2) => {
+  // names lexographically
+  const likes1 = Number(playlist1.querySelector("#name").innerText);
+  const likes2 = Number(playlist2.querySelector("#name").innerText);
+  if (likes1 >= likes2) return -1;
+  return 1;
+};
+
+const compareDate = (playlist1, playlist2) => {
+  let date1 = new Date(playlist1.id);
+  let date2 = new Date(playlist2.id);
+  if (date2 >= date1) return 1;
+  return -1;
+};
 
 fetch("data/data.json")
   .then((response) => {
@@ -274,6 +369,7 @@ fetch("data/data.json")
         const el = createPlaylistElement(playlist);
         playlistList.appendChild(el);
       });
+      handleSort("title");
     } else {
       const randFeature = shuffleArray(data)[0];
       console.log(randFeature);
@@ -310,6 +406,7 @@ const handleNewSubmit = (event) => {
     likes: 0,
     heartColor: "gray",
     songs: [],
+    date_added: new Date().toISOString(),
   };
 
   console.log(newPlaylist);
@@ -333,5 +430,6 @@ const handleNewSubmit = (event) => {
   });
   const final = createPlaylistElement(newPlaylist);
   playlistList.appendChild(final);
+  handleSort(document.getElementById("sorting").value);
   document.querySelector("#playlist-form").reset();
 };

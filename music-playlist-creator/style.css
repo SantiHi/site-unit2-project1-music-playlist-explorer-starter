@@ -444,3 +444,42 @@ h1 {
 .review-item:hover {
   background-color: #f9f9f9;
 }
+
+/* Edit Container!!!!*/
+
+.edit-container {
+  width: 50%;
+  margin-inline: 25%;
+  margin-top: 10%;
+}
+
+#editor-form label,
+#editor-form input,
+#editor-form textarea,
+#editor-form select,
+#editor-form button {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+}
+
+#editor-form label {
+  color: white;
+}
+
+#editor-form h2 {
+  color: white;
+  text-align: center;
+}
+
+.editor-content {
+  background-color: rgb(41, 41, 37);
+  margin: 10% auto; /* 15% from the top and centered */
+  padding: 0px;
+  border: 1px solid #888;
+  border-radius: 50px;
+  width: 40%; /* Could be more or less, depending on screen size */
+  height: 50%;
+  filter: drop-shadow(2px 2px 2px #161010);
+  overflow: auto; /* Enable scroll if needed */
+}
