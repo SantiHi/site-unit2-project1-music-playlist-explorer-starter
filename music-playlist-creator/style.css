@@ -30,6 +30,8 @@ body {
 #search-container {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #search-form {
@@ -38,7 +40,6 @@ body {
   width: 100%;
   align-items: center;
   justify-content: space-around;
-  margin-right: auto;
   gap: 1rem;
 }
 
@@ -143,7 +144,6 @@ button {
   margin-bottom: 20px;
   align-self: end;
   font-weight: 1000;
-  margin-right: 100%;
 }
 
 #duration-song {

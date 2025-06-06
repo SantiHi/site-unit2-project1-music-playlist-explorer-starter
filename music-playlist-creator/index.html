@@ -40,8 +40,16 @@
             <label for="search-text">Search: </label>
             <input type="text" id="search-text" name="search-text" required />
             <button id="search-button">search</button>
+            <button id="clear-button">clear</button>
           </form>
-          <button id="clear-button">clear</button>
+          <form id="sort-form">
+            <label for="sorting"> Sort by:</label>
+            <select id="sorting" name="sort">
+              <option value="title">title</option>
+              <option value="likes">likes</option>
+            </select>
+            <button id="sort-button">Sort</button>
+          </form>
         </div>
         <div class="playlist-container"></div>
       </div>

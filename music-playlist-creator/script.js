@@ -5,6 +5,7 @@ const allTab = document.getElementsByClassName("navigation")[0];
 const featTab = document.getElementsByClassName("navigation")[1];
 const searchButton = document.getElementById("search-button");
 const clearButton = document.getElementById("clear-button");
+const sortButton = document.getElementById("sort-button");
 
 // Get playlists container
 const playlistList = document.querySelector(".playlist-container");
@@ -14,15 +15,19 @@ featTab.addEventListener("click", () => {
   window.location.href = "featured.html";
 });
 
-searchButton.addEventListener("click", (event) => {
-  event.preventDefault();
-  handleSearch();
-});
+if (searchButton) {
+  searchButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    handleSearch();
+  });
+}
 
-clearButton.addEventListener("click", (event) => {
-  event.preventDefault();
-  handleClear();
-});
+if (clearButton) {
+  clearButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    handleClear();
+  });
+}
 
 function handleClear() {
   const searchQuery = document.querySelector("#search-form");
@@ -226,6 +231,34 @@ const featuredPlaylistTab = (feature) => {
   }
   container.append(sect);
 };
+
+const Sortbyfunct = (sortingFunc) => {
+  const B = document.querySelectorAll(".playlist-card");
+  array = Array.from(B);
+  console.log(array);
+  if (sortingFunc === "name") {
+  } else {
+    //sort by number of likes
+  }
+};
+
+const compareName = (playlist1, playlist2) => {
+  // names lexographically
+  const likes1 = playlist1.likes;
+  const likes2 = playlist2.likes;
+  const play1 = playlist1.toLowerCase();
+  const play2 = playlist2.toLowerCase();
+  if (play2 > play1) {
+    return -1;
+  } else if (play2 < play1) {
+    return 1;
+  } else {
+    if (likes1 >= likes2) return -1;
+    return 1;
+  }
+};
+
+const compareLikes = (playlist1, playlist2) => {};
 
 fetch("data/data.json")
   .then((response) => {
