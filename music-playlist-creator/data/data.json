@@ -149,7 +149,7 @@
     ]
   },
   {
-    "playlist_name": "Throwback Classics",
+    "playlist_name": "Throwbacks",
     "playlist_author": "David Lee",
     "playlist_art": "https://i.pinimg.com/736x/05/dc/30/05dc3002c1b2b5483ab73d2091be953b.jpg",
     "likes": 23,
@@ -180,6 +180,288 @@
       {
         "songID": "s304",
         "title": "Disco Fever",
+        "artist": "Nightgroove",
+        "album": "Dancefloor Hits",
+        "duration": "4:45"
+      },
+      {
+        "songID": "s305",
+        "title": "Retro Romance",
+        "artist": "Heartstrings",
+        "album": "Love in the 90s",
+        "duration": "4:00"
+      },
+      {
+        "songID": "s306",
+        "title": "Summer ’99",
+        "artist": "Sunset Memories",
+        "album": "Millennium Mix",
+        "duration": "3:35"
+      },
+      {
+        "songID": "s301",
+        "title": "Electric Youth",
+        "artist": "Retro Beat",
+        "album": "80s Forever",
+        "duration": "4:05"
+      },
+      {
+        "songID": "s302",
+        "title": "Golden Memories",
+        "artist": "Timeless Tunes",
+        "album": "Nostalgia",
+        "duration": "3:50"
+      },
+      {
+        "songID": "s303",
+        "title": "Classic Rock Anthem",
+        "artist": "Vintage Vibes",
+        "album": "Rock Legends",
+        "duration": "5:20"
+      },
+      {
+        "songID": "s304",
+        "title": "Disco Fever",
+        "artist": "Nightgroove",
+        "album": "Dancefloor Hits",
+        "duration": "4:45"
+      },
+      {
+        "songID": "s305",
+        "title": "Retro Romance",
+        "artist": "Heartstrings",
+        "album": "Love in the 90s",
+        "duration": "4:00"
+      },
+      {
+        "songID": "s306",
+        "title": "Summer ’99",
+        "artist": "Sunset Memories",
+        "album": "Millennium Mix",
+        "duration": "3:35"
+      }
+    ]
+  },
+  {
+    "playlist_name": "Throwback #2",
+    "playlist_author": "David Lee",
+    "playlist_art": "https://i.pinimg.com/736x/05/dc/30/05dc3002c1b2b5483ab73d2091be953b.jpg",
+    "likes": 29,
+    "heartColor": "gray",
+    "date_added": "2024-09-02T12:34:56.789Z",
+    "songs": [
+      {
+        "songID": "s301",
+        "title": "Electric Youth",
+        "artist": "Retro Beat",
+        "album": "80s Forever",
+        "duration": "4:05"
+      },
+      {
+        "songID": "s302",
+        "title": "Golden Memories",
+        "artist": "Timeless Tunes",
+        "album": "Nostalgia",
+        "duration": "3:50"
+      },
+      {
+        "songID": "s303",
+        "title": "Classic Rock Anthem",
+        "artist": "Vintage Vibes",
+        "album": "Rock Legends",
+        "duration": "5:20"
+      },
+      {
+        "songID": "s304",
+        "title": "Disco Fever",
+        "artist": "Nightgroove",
+        "album": "Dancefloor Hits",
+        "duration": "4:45"
+      },
+      {
+        "songID": "s305",
+        "title": "Retro Romance",
+        "artist": "Heartstrings",
+        "album": "Love in the 90s",
+        "duration": "4:00"
+      },
+      {
+        "songID": "s306",
+        "title": "Summer ’99",
+        "artist": "Sunset Memories",
+        "album": "Millennium Mix",
+        "duration": "3:35"
+      },
+      {
+        "songID": "s301",
+        "title": "Electric Youth",
+        "artist": "Retro Beat",
+        "album": "80s Forever",
+        "duration": "4:05"
+      },
+      {
+        "songID": "s302",
+        "title": "Golden Memories",
+        "artist": "Timeless Tunes",
+        "album": "Nostalgia",
+        "duration": "3:50"
+      },
+      {
+        "songID": "s303",
+        "title": "Classic Rock Anthem",
+        "artist": "Vintage Vibes",
+        "album": "Rock Legends",
+        "duration": "5:20"
+      },
+      {
+        "songID": "s304",
+        "title": "Disco Fever",
+        "artist": "Nightgroove",
+        "album": "Dancefloor Hits",
+        "duration": "4:45"
+      },
+      {
+        "songID": "s305",
+        "title": "Retro Romance",
+        "artist": "Heartstrings",
+        "album": "Love in the 90s",
+        "duration": "4:00"
+      },
+      {
+        "songID": "s306",
+        "title": "Summer ’99",
+        "artist": "Sunset Memories",
+        "album": "Millennium Mix",
+        "duration": "3:35"
+      }
+    ]
+  },
+  {
+    "playlist_name": "Gimmy Bucks",
+    "playlist_author": "Daniel",
+    "playlist_art": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQi5TsRmBv5v7aG11bcu7FfKt0HeSHJmX6Q_A&s",
+    "likes": 120,
+    "heartColor": "gray",
+    "date_added": "2024-04-02T12:34:56.789Z",
+    "songs": [
+      {
+        "songID": "s301",
+        "title": "Electric Youth",
+        "artist": "Retro Beat",
+        "album": "80s Forever",
+        "duration": "4:05"
+      },
+      {
+        "songID": "s302",
+        "title": "Golden Memories",
+        "artist": "Timeless Tunes",
+        "album": "Nostalgia",
+        "duration": "3:50"
+      },
+      {
+        "songID": "s303",
+        "title": "Classic Rock Anthem",
+        "artist": "Vintage Vibes",
+        "album": "Rock Legends",
+        "duration": "5:20"
+      },
+      {
+        "songID": "s304",
+        "title": "Disco Fever",
+        "artist": "Nightgroove",
+        "album": "Dancefloor Hits",
+        "duration": "4:45"
+      },
+      {
+        "songID": "s305",
+        "title": "Retro Romance",
+        "artist": "Heartstrings",
+        "album": "Love in the 90s",
+        "duration": "4:00"
+      },
+      {
+        "songID": "s306",
+        "title": "Summer ’99",
+        "artist": "Sunset Memories",
+        "album": "Millennium Mix",
+        "duration": "3:35"
+      },
+      {
+        "songID": "s301",
+        "title": "Electric Youth",
+        "artist": "Retro Beat",
+        "album": "80s Forever",
+        "duration": "4:05"
+      },
+      {
+        "songID": "s302",
+        "title": "Golden Memories",
+        "artist": "Timeless Tunes",
+        "album": "Nostalgia",
+        "duration": "3:50"
+      },
+      {
+        "songID": "s303",
+        "title": "Classic Rock Anthem",
+        "artist": "Vintage Vibes",
+        "album": "Rock Legends",
+        "duration": "5:20"
+      },
+      {
+        "songID": "s304",
+        "title": "Disco Fever",
+        "artist": "Nightgroove",
+        "album": "Dancefloor Hits",
+        "duration": "4:45"
+      },
+      {
+        "songID": "s305",
+        "title": "Retro Romance",
+        "artist": "Heartstrings",
+        "album": "Love in the 90s",
+        "duration": "4:00"
+      },
+      {
+        "songID": "s306",
+        "title": "Summer ’99",
+        "artist": "Sunset Memories",
+        "album": "Millennium Mix",
+        "duration": "3:35"
+      }
+    ]
+  },
+  {
+    "playlist_name": "Potato Man",
+    "playlist_author": "Ocean Man",
+    "playlist_art": "https://upload.wikimedia.org/wikipedia/en/a/a9/Booker_T._Jones_Potato_Hole_cover.jpg",
+    "likes": 13,
+    "heartColor": "gray",
+    "date_added": "2024-09-02T12:34:56.789Z",
+    "songs": [
+      {
+        "songID": "s301",
+        "title": "Electric Youth",
+        "artist": "Retro Beat",
+        "album": "80s Forever",
+        "duration": "4:05"
+      },
+      {
+        "songID": "s302",
+        "title": "Golden Bob",
+        "artist": "Timeless Tunes",
+        "album": "Nostalgia",
+        "duration": "3:50"
+      },
+      {
+        "songID": "s303",
+        "title": "Classic Rock Anthem",
+        "artist": "Vintage Vibes",
+        "album": "Rock Legends",
+        "duration": "5:20"
+      },
+      {
+        "songID": "s304",
+        "title": "Billy Fever",
         "artist": "Nightgroove",
         "album": "Dancefloor Hits",
         "duration": "4:45"
