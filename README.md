@@ -6,7 +6,7 @@ Submitted by: **Santi Criado**
 
 Estimated time spent: **14** hours spent in total
 
-Deployed Application (**required**): [Music Playlist Explorer Deployed Site](ADD_LINK_HERE)
+Deployed Application (**required**): [Music Playlist Explorer Deployed Site](https://music-playlist-q0lb.onrender.com/index.html)
 
 ### Application Features
 
