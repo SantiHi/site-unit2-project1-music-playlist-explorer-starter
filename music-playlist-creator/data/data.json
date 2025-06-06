@@ -2,7 +2,7 @@
   {
     "playlist_name": "Morning Vibes",
     "playlist_author": "Alice Smith",
-    "playlist_art": "assets/img/playlist.png",
+    "playlist_art": "https://i.pinimg.com/236x/13/f3/af/13f3af14f4ddf4b9eff5f401c0c8602e.jpg",
     "likes": 4,
     "heartColor": "gray",
     "date_added": "2024-06-06T12:34:56.789Z",
@@ -47,7 +47,7 @@
   {
     "playlist_name": "Chill Out",
     "playlist_author": "Carlos Reyes",
-    "playlist_art": "assets/img/playlist.png",
+    "playlist_art": "https://pbs.twimg.com/media/FHCjtcVXwAMR8It.jpg",
     "likes": 7,
     "heartColor": "gray",
     "date_added": "2024-03-06T12:34:56.789Z",
@@ -99,7 +99,7 @@
   {
     "playlist_name": "Workout Pump",
     "playlist_author": "Jasmine Lee",
-    "playlist_art": "assets/img/playlist.png",
+    "playlist_art": "https://studiodiy.com/wp-content/uploads/2017/03/workout-playlist.jpg",
     "likes": 0,
     "heartColor": "gray",
     "date_added": "2024-03-02T12:34:56.789Z",
@@ -151,7 +151,7 @@
   {
     "playlist_name": "Throwback Classics",
     "playlist_author": "David Lee",
-    "playlist_art": "assets/img/playlist.png",
+    "playlist_art": "https://i.pinimg.com/736x/05/dc/30/05dc3002c1b2b5483ab73d2091be953b.jpg",
     "likes": 23,
     "heartColor": "gray",
     "date_added": "2024-09-02T12:34:56.789Z",
