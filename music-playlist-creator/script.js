@@ -19,12 +19,18 @@ featTab.addEventListener("click", () => {
 if (sort) {
   document.getElementById("sorting").addEventListener("change", function () {
     const selectedValue = this.value;
-    console.log(selectedValue);
     handleSort(selectedValue);
   });
 }
 
 if (searchButton) {
+  const form = document.getElementById("playlist-form");
+  form.addEventListener("keypress", (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      handleSearch();
+    }
+  });
   searchButton.addEventListener("click", (event) => {
     event.preventDefault();
     handleSearch();
@@ -78,6 +84,7 @@ window.onclick = function (event) {
   }
   if (event.target == editModal) {
     editModal.style.display = "none";
+    document.querySelector(".edit-container").innerHTML = "";
   }
 };
 
@@ -137,19 +144,16 @@ const createPlaylistElement = (playlistObj) => {
   editButton.addEventListener("click", (event) => {
     event.stopPropagation();
     document.querySelector("#editor").style.display = "block";
-    populateEdit(playlistObj);
+    populateEdit(playlistObj, playlistElement);
   });
 
   return playlistElement;
 };
 
-const populateEdit = (playlistObj) => {
-  console.log(playlistObj);
-
+const populateEdit = (playlistObj, playlistElement) => {
   const editContainer = document.querySelector(".edit-container");
   const editForm = document.createElement("form");
   editForm.id = "editor-form";
-  console.log(editContainer);
   // generate correctly formatted song string.
   let initString = "";
 
@@ -165,24 +169,65 @@ const populateEdit = (playlistObj) => {
       ";";
     initString = initString + string;
   });
-  console.log(initString);
   editForm.innerHTML = `
     <h2>Edit Current Playlist:</h2>
               <label for="new-name">Playlist Title: </label>
-              <input type="text" id="new-name" name="book-title" value = ${playlistObj.playlist_name} required />
+              <input type="text" id="new-name" name="book-title" value = "${playlistObj.playlist_name}" required />
               <label for="author"> Author of Playlist: </label>
-              <input type="text" id="author" name="book-title" value = ${playlistObj.playlist_author}required />
+              <input type="text" id="author" name="book-title" value = "${playlistObj.playlist_author}" required />
               <label for="image"> Image URL </label>
-              <input type="text" id="image" name="url" value = ${playlistObj.playlist_art} required />
+              <input type="text" id="image" name="url" value = "${playlistObj.playlist_art}" required />
               <label for="new-songs" id = "songlist" 
-                >Songs (form songname: artist, album, duration; song2:..)</label
+                >Songs (form songname: artist, album, duration;... Please delete entire songs)</label
               >
               <textarea id="new-songs" name="review-text" required> ${initString}</textarea>
               <button type="submit">Save Changes</button>
   `;
-  console.log(editForm);
-  editContainer.appendChild(editForm);
-  console.log(editContainer);
+  editContainer.appendChild(editForm, playlistElement);
+
+  editForm.querySelector("button").addEventListener("click", (event) => {
+    event.preventDefault();
+    handleSavedChanges(playlistObj, editContainer, playlistElement);
+    editModal.style.display = "none";
+  });
+};
+
+const handleSavedChanges = (playlistObj, editContainer, playlistElement) => {
+  const container = playlistElement.parentNode;
+  container.removeChild(playlistElement);
+  const PlaylistTitle = editContainer.querySelector("#new-name");
+  const title = PlaylistTitle.value;
+  const reviewRate = editContainer.querySelector("#new-songs");
+  const newSongs = reviewRate.value;
+  const author = editContainer.querySelector("#author");
+  const newAuthor = author.value;
+  const image = editContainer.querySelector("#image");
+  const imageURL = image.value;
+
+  playlistObj.playlist_name = title;
+  playlistObj.playlist_author = newAuthor;
+  playlistObj.playlist_art = imageURL;
+
+  const songBlocks = newSongs.match(/.*?(?=;)/g);
+  const regExp = /^\s*(.*?)\s*:\s*(.*?)\s*,\s*(.*?)\s*,\s*(.*?)\s*$/;
+
+  let filteredSongs = songBlocks.filter((song) => song && song.trim() !== "");
+
+  playlistObj.songs = filteredSongs.map((song) => {
+    let el = song.trim().match(regExp);
+    if (!el) return null;
+    return {
+      title: el[1].trim(),
+      artist: el[2].trim(),
+      album: el[3].trim(),
+      duration: el[4].trim(),
+    };
+  });
+
+  playlistElement = createPlaylistElement(playlistObj);
+  container.appendChild(playlistElement);
+  editContainer.innerHTML = "";
+  handleSort(document.getElementById("sorting").value);
 };
 
 const populateModal = (playlistObj) => {
@@ -299,14 +344,10 @@ const featuredPlaylistTab = (feature) => {
 const handleSort = (sortingFunc) => {
   const B = document.querySelectorAll(".playlist-card");
   array = Array.from(B);
-  console.log(array);
-
-  console.log(compareName(array[0], array[1]));
 
   if (sortingFunc === "title") {
     // lexographically by name of playlist
     array.sort((a, b) => compareName(a, b));
-    console.log(array);
   } else if (sortingFunc === "likes") {
     // by number of likes (descending)
     array.sort((a, b) => compareLikes(a, b));
@@ -329,8 +370,6 @@ const compareName = (playlist1, playlist2) => {
   const play1 = title1.toLowerCase();
   const play2 = title2.toLowerCase();
 
-  console.log(play1);
-  console.log(play2);
   if (play2 > play1) {
     return -1;
   } else if (play2 < play1) {
@@ -363,7 +402,6 @@ fetch("data/data.json")
     return response.json();
   })
   .then((data) => {
-    console.log(window.name);
     if (window.location.pathname.includes("index")) {
       data.forEach((playlist) => {
         const el = createPlaylistElement(playlist);
@@ -372,7 +410,6 @@ fetch("data/data.json")
       handleSort("title");
     } else {
       const randFeature = shuffleArray(data)[0];
-      console.log(randFeature);
       featuredPlaylistTab(randFeature);
     }
   })
@@ -383,12 +420,19 @@ fetch("data/data.json")
 /* FORM SUBMIT NEW ALBUM: */
 
 document.addEventListener("DOMContentLoaded", () => {
-  const playlistForm = document.querySelector("playlist-form");
+  const playlistForm = document.querySelector("#playlist-form");
   addEventListener("submit", handleNewSubmit);
+  if (playlistForm) {
+    playlistForm.addEventListener("keypress", (event) => {
+      if (event.key === "Enter") {
+        handleNewSubmit(event);
+        console.log("yay");
+      }
+    });
+  }
 });
 
 const handleNewSubmit = (event) => {
-  console.log("NewPlaylist called!");
   event.preventDefault();
 
   const PlaylistTitle = document.querySelector("#new-name");
@@ -409,15 +453,11 @@ const handleNewSubmit = (event) => {
     date_added: new Date().toISOString(),
   };
 
-  console.log(newPlaylist);
   const songBlocks = newSongs.match(/.*?(?=;)/g);
-  console.log(songBlocks);
-
   const regExp = /^\s*(.*?)\s*:\s*(.*?)\s*,\s*(.*?)\s*,\s*(.*?)\s*$/;
 
   let filteredSongs = songBlocks.filter((song) => song && song.trim() !== "");
 
-  console.log(filteredSongs);
   newPlaylist.songs = filteredSongs.map((song) => {
     let el = song.trim().match(regExp);
     if (!el) return null;
