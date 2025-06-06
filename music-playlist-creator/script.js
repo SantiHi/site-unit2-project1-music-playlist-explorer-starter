@@ -4,6 +4,7 @@ const span = document.getElementsByClassName("close")[0];
 const allTab = document.getElementsByClassName("navigation")[0];
 const featTab = document.getElementsByClassName("navigation")[1];
 const searchButton = document.getElementById("search-button");
+const clearButton = document.getElementById("clear-button");
 
 // Get playlists container
 const playlistList = document.querySelector(".playlist-container");
@@ -18,22 +19,32 @@ searchButton.addEventListener("click", (event) => {
   handleSearch();
 });
 
+clearButton.addEventListener("click", (event) => {
+  event.preventDefault();
+  handleClear();
+});
+
+function handleClear() {
+  const searchQuery = document.querySelector("#search-form");
+  searchQuery.reset();
+  const B = document.querySelectorAll(".playlist-card");
+  Array.from(B).forEach((playlist) => {
+    playlist.style.display = "block";
+  });
+}
+
 allTab.addEventListener("click", () => {
   window.location.href = "index.html";
 });
 
 function handleSearch() {
   const searchText = document.querySelector("#search-text");
-  const searchString = searchText.value;
-  console.log(searchText);
-  playlistList.forEach((playlist) => {
-    const title = playlist.querySelector("h4");
-    const author = playlist.querySelector("p");
-    if (
-      title.value.includes(searchString) ||
-      author.value.includes(searchString)
-    )
-      return;
+  const searchString = searchText.value.toLowerCase();
+  const B = document.querySelectorAll(".playlist-card");
+  Array.from(B).forEach((playlist) => {
+    const title = playlist.querySelector("h4").innerText.toLowerCase();
+    const author = playlist.querySelector("p").innerText.toLowerCase();
+    if (author.includes(searchString) || title.includes(searchString)) return;
     playlist.style.display = "none";
   });
 }

@@ -27,6 +27,11 @@ body {
   justify-self: center;
 }
 
+#search-container {
+  display: flex;
+  flex-direction: row;
+}
+
 #search-form {
   display: flex;
   flex-direction: row;
