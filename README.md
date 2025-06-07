@@ -132,28 +132,26 @@ Deployed Application (**required**): [Music Playlist Explorer Deployed Site](htt
 
 ### Walkthrough Video
 
-Add the embedded URL code to your animated app walkthrough below, [ADD_EMBEDDED_CODE_HERE](https://www.loom.com/share/1babf51c4f9a494a934738b9e921b53b?sid=81d243d0-3dba-4294-9c48-ec6fda2faf80). Make sure the video actually renders and is playable when viewing this README. Ensure your walkthrough showcases the presence and/or functionality of all features you implemented above (check them off as you film!). Pay attention to any **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS** checkboxes listed above to ensure graders see the full functionality of your website! (🚫 Remove this paragraph after adding walkthrough video)
-
-`ADD_EMBEDDED_CODE_HERE`
+Add the embedded URL code to your animated app walkthrough below, [Video Link](https://www.loom.com/share/1babf51c4f9a494a934738b9e921b53b?sid=81d243d0-3dba-4294-9c48-ec6fda2faf80). Make sure the video actually renders and is playable when viewing this README. Ensure your walkthrough showcases the presence and/or functionality of all features you implemented above (check them off as you film!). Pay attention to any **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS** checkboxes listed above to ensure graders see the full functionality of your website! (🚫 Remove this paragraph after adding walkthrough video)
 
 ### Reflection
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-Add your response here
+I think that the labs left me relatively prepared to complete the assignments. I think that perhaps the sorting feature was a lot more research into javascript, but it was still manageable in general. 
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
-Add your response here
+Had I more time, I would have layed out my UI with more detail first, and I would go through my javascript and css code and condense it significantly. My code is way longer than it needs to be, and I could create a lot more methods that could be re-used in my javascript code, and I would also be able to condense my css a lot. 
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Add your response here
+I think that all the stretch features ended up working very well, and that there were very few bugs overall. I noticed that a lot of my peers used a template / insipration for their UI's, like spotify, etc, so I would try that next if I could. 
 
 ### Open-source libraries used
 
-- Add any links to open-source libraries used in your project.
+- n/a
 
 ### Shout out
 
-Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
+Shout out to Matthew, Tom, Ben, Yaw, Noble!!!
