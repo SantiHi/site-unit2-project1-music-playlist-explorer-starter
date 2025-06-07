@@ -138,7 +138,7 @@ Deployed Application (**required**): [Music Playlist Explorer Deployed Site](htt
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-I think that the labs left me relatively prepared to complete the assignments. I think that perhaps the sorting feature was a lot more research into javascript, but it was still manageable in general. 
+I think that the labs left me relatively prepared to complete the assignments. I think that perhaps the sorting feature was a lot more research into javascript, but it was still manageable overall. I did lean into more my past experience when it came to the javascript. 
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
